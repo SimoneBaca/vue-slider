@@ -1,60 +1,75 @@
-/* CAROUSEL 
-#carousel {
-    height: 600px;
-    width: 1000px;
-    margin: 50px auto;
+/* CAROUSEL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    float: left;
+    width: 700px;
+    height: 300px;
     position: relative;
-  }
-  
-  .gallery {
-    position: relative;
-  }
-  
-  .gallery img {
+}
+
+.item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    display: none;
-  }
-  
-  .gallery .caption {
-    display: none;
-  }
-  
-  .gallery img.active,
-  .gallery .caption.active {
-    display: block;
-  }
-  
-  .caption {
+}
+
+.item .text {
     position: absolute;
-    bottom: 0;
-    left: 15px;
-  }
-  
-  .caption h3,
-  .caption p {
-    text-shadow: 0 0 5px black;
-  }
-  
-  /* BUTTONS */
-  
-  #carousel .fa-solid {
+    right: 20px;
+    bottom: 20px;
+    text-align: right;
+    color: white;
+}
+
+.thumbs {
+    float: left;
+    height: 300px;
+    background: #000;
+    position: relative;
+}
+
+.thumb {
+    height: calc((300px) / 5);
+    opacity: 0.5;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb.active {
+    border: 2px solid #ccc;
+    opacity: 1;
+}
+
+.prev,
+.next {
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 50%;
+    background: #ccc;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%);
     cursor: pointer;
-  }
-  
-  #carousel .fa-solid:hover {
-    color: dodgerblue;
-  }
-  
-  #prev {
-    right: 103%;
-  }
-  
-  #next {
-    left: 103%;
-  }
+    z-index: 999;
+}
+
+.next {
+    bottom: 0;
+}
